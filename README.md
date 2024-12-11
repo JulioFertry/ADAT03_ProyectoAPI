@@ -1,11 +1,11 @@
 # API Recetas
 
-## :taco: Descripción
+## 🌮 Descripción
 Esta API proporciona una forma de gestionar usuarios, ingredientes y recetas para una aplicación enfocada en la cocina.
 Los usuarios pueden agregar ingredientes a su nevera virtual, y la API generará recetas basadas en los ingredientes disponibles.
 Además, permite crear y listar recetas.
 
-## :spaghetti: Estructura de la base de datos
+## 🍝 Estructura de la base de datos
 ### Tablas
 **Usuarios**: Representa a los usuarios de la aplicación.
 | Campo      | Tipo   | Descripción                        |
@@ -34,7 +34,7 @@ Además, permite crear y listar recetas.
 - **Usuarios a Ingredientes**: Uno a muchos (un usuario puede tener varios ingredientes en su nevera) 
 - **Recetas a Ingredientes**: Muchos a muchos (una receta puede tener varios ingredientes y un ingrediente se puede usar en varias recetas)
 
-## :hamburguer: Métodos REST
+## 🍔 Métodos REST
 ### Usuarios
 - `POST /usuarios`: Crear un nuevo usuario
 - `GET /usuarios/{id}`: Obtener información de un usuario
