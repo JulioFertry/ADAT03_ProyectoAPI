@@ -15,6 +15,7 @@ Además, permite crear y listar recetas.
 | `nombre`   | String | Nombre del usuario                 |  
 | `email`    | String | Email del usuario                  |  
 | `password` | String | Contraseña                         |  
+| `rol`      | String | Rol del usuario                    |
   
 
 **Ingredientes**: Representa los ingredientes que los usuarios tienen en su "nevera"
@@ -32,11 +33,10 @@ Además, permite crear y listar recetas.
 |:---------------|:-------|:--------------------------------------------|  
 | `id`           | PK     | Identificador único                         |  
 | `nombre`       | String | Nombre de la receta                         |  
-| `descripcion`  | String | Descripción o pasos para preparar la receta |  
-| `ingredientes` | String | Lista de ingredientes necesarios            |
+| `descripcion`  | String | Descripción o pasos para preparar la receta |
   
 ### Relaciones
-- **Usuarios a Ingredientes**: Uno a muchos (un usuario puede tener varios ingredientes en su nevera)
+- **Usuarios a Ingredientes**: Muchos a muchos (un usuario puede tener varios ingredientes en su nevera y un ingrediente puede estar en muchas neveras)
 - **Recetas a Ingredientes**: Muchos a muchos (una receta puede tener varios ingredientes y un ingrediente se puede usar en varias recetas)
 
 ## 🍔 Métodos REST

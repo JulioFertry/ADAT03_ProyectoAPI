@@ -20,6 +20,9 @@ data class User(
     @Column(unique = false, length = 50, nullable = false)
     var password: String? = null,
 
+    @Column(unique = false, length = 15, nullable = false)
+    var role: String? = null,
+
     @ManyToMany(mappedBy = "users")
     var fridge: MutableList<Ingredient>? = mutableListOf()
 
