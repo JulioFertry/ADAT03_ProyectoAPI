@@ -20,7 +20,7 @@ data class User(
     @Column(unique = false, length = 50, nullable = false)
     var password: String? = null,
 
-    @OneToMany(mappedBy = "user", cascade = [(CascadeType.ALL)], orphanRemoval = true)
+    @ManyToMany(mappedBy = "users")
     var fridge: MutableList<Ingredient>? = mutableListOf()
 
 )

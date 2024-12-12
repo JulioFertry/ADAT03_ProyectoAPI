@@ -14,9 +14,13 @@ data class Ingredient(
     @Column(length = 30, nullable = false)
     val name: String? = null,
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    var user: User? = null,
+    @ManyToMany
+    @JoinTable(
+        name = "ingredient_user",
+        joinColumns = [JoinColumn(name = "ingredient_id")],
+        inverseJoinColumns = [JoinColumn(name = "user_id")]
+    )
+    var users: MutableList<User>? = mutableListOf(),
 
     @ManyToMany(cascade = [CascadeType.ALL])
     @JoinTable(
