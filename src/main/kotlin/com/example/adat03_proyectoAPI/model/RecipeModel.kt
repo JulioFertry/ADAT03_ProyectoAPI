@@ -5,7 +5,7 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "recipes")
-data class Recipe(
+data class RecipeModel(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +18,6 @@ data class Recipe(
     var description: String? = null,
 
     @ManyToMany(mappedBy = "recipes")
-    var ingredients: MutableList<Ingredient>? = mutableListOf()
+    var ingredients: MutableList<IngredientModel>? = mutableListOf()
 
 )

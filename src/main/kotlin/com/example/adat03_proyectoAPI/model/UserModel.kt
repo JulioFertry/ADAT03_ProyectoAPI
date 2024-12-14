@@ -5,7 +5,7 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "users")
-data class User(
+data class UserModel(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +21,9 @@ data class User(
     var password: String? = null,
 
     @Column(unique = false, length = 15, nullable = false)
-    var role: String? = null,
+    var roles: String? = null,
 
     @ManyToMany(mappedBy = "users")
-    var fridge: MutableList<Ingredient>? = mutableListOf()
+    var fridge: MutableList<IngredientModel>? = mutableListOf()
 
 )

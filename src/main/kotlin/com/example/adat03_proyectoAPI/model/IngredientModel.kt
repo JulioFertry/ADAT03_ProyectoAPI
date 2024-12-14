@@ -5,7 +5,7 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "ingredients")
-data class Ingredient(
+data class IngredientModel(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ data class Ingredient(
         joinColumns = [JoinColumn(name = "ingredient_id")],
         inverseJoinColumns = [JoinColumn(name = "user_id")]
     )
-    var users: MutableList<User>? = mutableListOf(),
+    var users: MutableList<UserModel>? = mutableListOf(),
 
     @ManyToMany(cascade = [CascadeType.ALL])
     @JoinTable(
@@ -28,6 +28,6 @@ data class Ingredient(
         joinColumns = [JoinColumn(name = "ingredient_id")],
         inverseJoinColumns = [JoinColumn(name = "recipe_id")]
     )
-    var recipes: MutableList<Recipe>? = mutableListOf()
+    var recipes: MutableList<RecipeModel>? = mutableListOf()
 
 )
